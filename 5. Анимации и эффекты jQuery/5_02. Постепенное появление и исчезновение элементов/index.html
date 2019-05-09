@@ -1,0 +1,54 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>Исчезновение элементов</title>
+<script src="../../jquery.js"></script>
+
+<script> 
+        
+    $(function() {
+        $("#fadein").click(function() {
+            $("#theDiv").fadeIn("normal"); // постепенное появление
+        });
+        $("#fadeout").click(function() {
+            $("#theDiv").fadeOut(4000); // постепенное исчезновение
+        });
+        $("#fadeto3").click(function() {
+            $("#theDiv").fadeTo("slow", 0.3); // Изменяет уровень прозрачности
+        });
+        $("#fadeup").click(function() {
+            $("#theDiv").fadeTo("slow", 1.0);
+        });
+    });
+    
+</script>
+
+<style type="text/css">
+    div#theDiv {
+        width: 250px;
+        height: 180px;
+        margin: 10px;
+        padding: 20px;
+        background: blue;
+        border: 2px solid black;
+        cursor: pointer;
+    }
+    p, span {
+        font-size: 16pt;
+    }
+    button {
+        margin: 5px;
+    }
+</style>
+</head>
+<body>
+<p>
+    Исчезновение элементов</p>
+<div id="theDiv">
+</div>
+<button id="fadein">Fade In</button>
+<button id="fadeout">Fade Out</button>
+<button id="fadeto3">Fade To .3</button>
+<button id="fadeup">Fade To 1.0</button>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>Miscellaneous jQuery Events</title>
+     <script src="../../jquery.js"></script>
+     <script>
+        
+        $(function() {
+            $("div").one("click", function(evt) { //по клику 
+                $(this).css({ background: "red", cursor: "auto"}); // изменяет цвет
+            });
+        });
+        
+    </script>
+    <style type="text/css">
+        div {
+            width: 80px;
+            height: 80px;
+            margin: 10px;
+            float: left;
+            background: blue;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+        p {
+            font-size: 18pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Нажмите на каждый квадрат, чтобы изменить цвет</h1> 
+    <div>
+    </div>
+    <div>
+    </div>
+    <div>
+    </div>
+    <div>
+    </div>
+    <div>
+    </div>
+    <br><br>
+    <br><br>
+   
+    <p>Эта функция может подойти для приложения "Запоминание слов", можно прицепить один клик для всех кнопок, что бы скрытые картинки открывались по нажатию</p>
+</body>
+</html>
