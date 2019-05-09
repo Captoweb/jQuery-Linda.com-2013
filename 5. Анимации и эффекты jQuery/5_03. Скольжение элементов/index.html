@@ -1,23 +1,24 @@
 <!DOCTYPE>
 <html>
 <head>
-<title>jQuery: чередование и выделение таблиц</title>
+<title>jQuery Sliding an Element</title>
 <script src="../../jquery.js"></script>
 <script>
         
-        $(function() {
-            $("#show").click(function() {
-                $("#theDiv").show(5000, function(){
-                    alert("Отображение успешно оконченно!");
-                }); //показать картинку
+        $(function() { 
+            $("#slideup").click(function() {
+                $("#theDiv").slideUp(3000, function(){
+                    alert("слайд успешно закатился");
+                }); //закатить вверх
             });
-            $("#hide").click(function() {
-                $("#theDiv").hide("normal"); //скрыть картинку
+            $("#slidedown").click(function() {
+                $("#theDiv").slideDown("normal");// выкатить вниз
             });
             $("#toggle").click(function() {
-                $("#theDiv").toggle("slow"); //переключить видимость
+                $("#theDiv").slideToggle("slow"); //переключатель
             });
         });
+        
     </script>
     <style type="text/css">
         div#theDiv {
@@ -39,11 +40,11 @@
 </head>
 <body>
     <p>
-        Showing and Hiding an Element</p>
+        Sliding an Element</p>
     <div id="theDiv">
     </div>
-    <button id="show">Show</button>
-    <button id="hide">Hide</button>
-    <button id="toggle">Toggle</button>
+    <button id="slideup">Slide Up</button>
+    <button id="slidedown">Slide Down</button>
+    <button id="toggle">Toggle Slide</button>
 </body>
 </html>

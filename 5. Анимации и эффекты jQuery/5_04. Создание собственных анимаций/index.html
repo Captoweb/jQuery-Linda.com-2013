@@ -1,31 +1,35 @@
 <!DOCTYPE>
 <html>
 <head>
-<title>jQuery: чередование и выделение таблиц</title>
+<title>jQuery Animating an Element</title>
 <script src="../../jquery.js"></script>
 <script>
         
         $(function() {
-            $("#show").click(function() {
-                $("#theDiv").show(5000, function(){
-                    alert("Отображение успешно оконченно!");
-                }); //показать картинку
+            $("#right").click(function() {
+                $("#theDiv").animate({ width: "500px" }, 1000); // добавляет ширину (изменяет CSS)
             });
-            $("#hide").click(function() {
-                $("#theDiv").hide("normal"); //скрыть картинку
+            $("#text").click(function() {
+                $("#theDiv").animate({ fontSize: "24pt" }, 1000); // увеличивает шрифт (изменяет CSS)
             });
             $("#toggle").click(function() {
-                $("#theDiv").toggle("slow"); //переключить видимость
+                $("#theDiv").animate({ left: "500" }, 1000, "swing"); // сдвигает элемент вправо (изменяет CSS)
+            });
+            
+             $("#multiple").click(function() {
+                $("#theDiv").animate({ width: "500px",fontSize: "24pt", left: "500" }, 1000, "linear"); // объединяет все предыдущие фйнкции в одну
             });
         });
+        
     </script>
     <style type="text/css">
         div#theDiv {
+            position:relative;
             width: 250px;
             height: 180px;
             margin: 10px;
             padding: 20px;
-            background: blue;
+            background: cyan;
             border: 2px solid black;
             cursor: pointer;
         }
@@ -39,11 +43,11 @@
 </head>
 <body>
     <p>
-        Showing and Hiding an Element</p>
-    <div id="theDiv">
-    </div>
-    <button id="show">Show</button>
-    <button id="hide">Hide</button>
-    <button id="toggle">Toggle</button>
+        Animating an Element</p>
+    <div id="theDiv">Animate Me</div>
+    <button id="right">Grow Right</button>
+    <button id="text">Big Text</button>
+    <button id="toggle">Move Div</button>
+    <button id="multiple">Анимировать всё</button>
 </body>
 </html>
